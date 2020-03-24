@@ -1,6 +1,6 @@
 # Algorithm
 
-Algorithm Question Study using Java and Python
+Algorithm Question Study using Java, Python and SQL
 
 ## SQL
 

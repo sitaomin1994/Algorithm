@@ -1,2 +1,7 @@
 # Algorithm
-Algorithm Study
+
+Algorithm Question Study using Java and Python
+
+## Array
+
+## Stack & Queue

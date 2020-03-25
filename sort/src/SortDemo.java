@@ -6,7 +6,7 @@ public class SortDemo {
     public static void main(String[] args){
 
 
-        int[] a = randomIntArray(20, 1000);
+        int[] a = randomIntArray(20, 100);
         int[] b;
 
         System.out.println("Generated array:");
@@ -20,7 +20,7 @@ public class SortDemo {
 
         /* Insertion Sort */
         b = a.clone();
-
+        InsertionSorter.sort(b);
         System.out.println("Result After insertion sort:");
         System.out.println(Arrays.toString(b));
 

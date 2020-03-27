@@ -32,7 +32,7 @@ public class SortDemo {
 
         /* Merge Sort */
         b = a.clone();
-
+        MergeSorter.sort(b);
         System.out.println("Result After merge sort:");
         System.out.println(Arrays.toString(b));
 

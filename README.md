@@ -7,10 +7,10 @@ Algorithm Question Study using Java, Python and SQL
 ## Algorithm
 ### 1.Sort
 #### (1) sort algorithms
-- Selection Sort
-- Insertion Sort
+- Selection Sort (+)
+- Insertion Sort (+)
 - Bubble Sort
-- Merge Sort
+- Merge Sort (+)
 - Quick Sort
 - Heap Sort
 

@@ -9,7 +9,7 @@ Algorithm Question Study using Java, Python and SQL
 #### (1) sort algorithms
 - Selection Sort (+)
 - Insertion Sort (+)
-- Bubble Sort
+- Bubble Sort (+) - optimization
 - Merge Sort (+)
 - Quick Sort
 - Heap Sort

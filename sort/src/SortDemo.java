@@ -6,7 +6,7 @@ public class SortDemo {
     public static void main(String[] args){
 
 
-        int[] a = randomIntArray(20, 100);
+        int[] a = randomIntArray(20, 1000);
         int[] b;
 
         System.out.println("Generated array:");
@@ -26,7 +26,7 @@ public class SortDemo {
 
         /* Bubble Sort */
         b = a.clone();
-
+        BubbleSorter.sort(b);
         System.out.println("Result After bubble sort:");
         System.out.println(Arrays.toString(b));
 

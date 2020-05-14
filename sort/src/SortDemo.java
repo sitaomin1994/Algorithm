@@ -24,6 +24,12 @@ public class SortDemo {
         System.out.println("Result After insertion sort:");
         System.out.println(Arrays.toString(b));
 
+        /* Shell Sort */
+        b = a.clone();
+        ShellSorter.sort(b);
+        System.out.println("Result After Shell sort:");
+        System.out.println(Arrays.toString(b));
+
         /* Bubble Sort */
         b = a.clone();
         BubbleSorter.sort(b);

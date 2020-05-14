@@ -38,6 +38,7 @@ public class SortDemo {
 
         /* Quick Sort */
         b = a.clone();
+        QuickSorter.quickSort(b);
 
         System.out.println("Result After quick sort:");
         System.out.println(Arrays.toString(b));

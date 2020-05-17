@@ -16,6 +16,8 @@ Algorithm Question Study using Java, Python and SQL
   + three-way partition - Dutch Flag Problem
   + Quick sort implementation
 - Heap Sort
+- Bucket Sort
+- Radix Sort
 
 #### (2) common problems
 
@@ -25,4 +27,11 @@ Algorithm Question Study using Java, Python and SQL
 
 ### 2. Stack & Queue
 
-### 3. Heap - Priority Queue
+### 3. Hash Table
+
+### 4. Heap - Priority Queue
+- BinaryHeap Int
+- BinaryHeap GenericType (+)
+- Binomial Heap
+ 
+

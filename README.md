@@ -15,7 +15,7 @@ Algorithm Question Study using Java, Python and SQL
 - Quick Sort (+)
   + three-way partition - Dutch Flag Problem
   + Quick sort implementation
-- Heap Sort
+- Heap Sort (+)
 - Bucket Sort
 - Radix Sort
 

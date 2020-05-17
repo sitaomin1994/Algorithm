@@ -6,54 +6,61 @@ public class SortDemo {
     public static void main(String[] args){
 
 
-        int[] a = randomIntArray(20, 1000);
-        int[] b;
+        int[] arr = randomIntArray(10, 1000);
+        int[] arr2 = arr.clone();
+        Arrays.sort(arr2);
+        int[] arr3;
+        boolean testResult;
 
-        System.out.println("Generated array:");
-        System.out.println(Arrays.toString(a));
+        System.out.println("Generated array:" + Arrays.toString(arr));
+        System.out.println("Sorted array:" + Arrays.toString(arr2));
 
         /* Selection Sort */
-        b = a.clone();
-        SelectionSorter.sort(b);
-        System.out.println("Result After selection sort:");
-        System.out.println(Arrays.toString(b));
+        arr3 = arr.clone();
+        SelectionSorter.sort(arr3);
+        testResult = isEqual(arr2, arr3);
+        System.out.println("Result after selection sort: " + Arrays.toString(arr3) + " Correctness: " + testResult);
 
         /* Insertion Sort */
-        b = a.clone();
-        InsertionSorter.sort(b);
-        System.out.println("Result After insertion sort:");
-        System.out.println(Arrays.toString(b));
+        arr3 = arr.clone();
+        InsertionSorter.sort(arr3);
+        testResult = isEqual(arr2, arr3);
+        System.out.println("Result after insertion sort: " + Arrays.toString(arr3) + " Correctness: " + testResult);
+
 
         /* Shell Sort */
-        b = a.clone();
-        ShellSorter.sort(b);
-        System.out.println("Result After Shell sort:");
-        System.out.println(Arrays.toString(b));
+        arr3 = arr.clone();
+        ShellSorter.sort(arr3);
+        testResult = isEqual(arr2, arr3);
+        System.out.println("Result after Shell sort: " + Arrays.toString(arr3) + " Correctness: " + testResult);
+
 
         /* Bubble Sort */
-        b = a.clone();
-        BubbleSorter.sort(b);
-        System.out.println("Result After bubble sort:");
-        System.out.println(Arrays.toString(b));
+        arr3 = arr.clone();
+        BubbleSorter.sort(arr3);
+        testResult = isEqual(arr2, arr3);
+        System.out.println("Result after bubble sort: " + Arrays.toString(arr3) + " Correctness: " + testResult);
+
 
         /* Merge Sort */
-        b = a.clone();
-        MergeSorter.sort(b);
-        System.out.println("Result After merge sort:");
-        System.out.println(Arrays.toString(b));
+        arr3 = arr.clone();
+        MergeSorter.sort(arr3);
+        testResult = isEqual(arr2, arr3);
+        System.out.println("Result after merge sort: " + Arrays.toString(arr3) + " Correctness: " + testResult);
+
 
         /* Quick Sort */
-        b = a.clone();
-        QuickSorter.quickSort(b);
+        arr3 = arr.clone();
+        QuickSorter.quickSort(arr3);
+        testResult = isEqual(arr2, arr3);
+        System.out.println("Result after quick sort: " + Arrays.toString(arr3) + " Correctness: " + testResult);
 
-        System.out.println("Result After quick sort:");
-        System.out.println(Arrays.toString(b));
 
         /* Heap Sort */
-        b = a.clone();
-
-        System.out.println("Result After heap sort:");
-        System.out.println(Arrays.toString(b));
+        arr3 = arr.clone();
+        HeapSorter.sort(arr3);
+        testResult = isEqual(arr2, arr3);
+        System.out.println("Result after heap sort: " + Arrays.toString(arr3) + " Correctness: " + testResult);
 
 
     }
@@ -69,6 +76,26 @@ public class SortDemo {
         }
 
         return a;
+    }
+
+    public static boolean isEqual(int[] arr1, int[] arr2) {
+        if ((arr1 == null && arr2 != null) || (arr1 != null && arr2 == null)) {
+            return false;
+        }
+
+        if (arr1 == null) {
+            return true;
+        }
+
+        if (arr1.length != arr2.length) {
+            return false;
+        }
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] != arr2[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }

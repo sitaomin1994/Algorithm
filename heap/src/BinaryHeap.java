@@ -302,6 +302,36 @@ public class BinaryHeap<AnyType extends Comparable<? super AnyType>>
             System.out.println("Delete Min element:" + h.deleteMin());
             System.out.println("After delete min element:"+ h + ", size "+ h.size());
         }
+
+        System.out.println("==============================================================================");
+        System.out.println("Test binary heap Int: ");
+        testBinaryHeapInt(elements);
+    }
+
+    // Test program
+    public static void testBinaryHeapInt(int[] elements)
+    {
+        // heap
+        BinaryHeapInt h = new BinaryHeapInt();
+        BinaryHeapInt h2 = new BinaryHeapInt(elements);
+
+        System.out.println("Heap build from array: " + h2);
+
+        System.out.println("Heap build by insertion: ");
+
+        // Test insertion
+        for (int n : elements) {
+            System.out.println("Insert element:" + n);
+            h.insert(n);
+        }
+
+        System.out.println("After Insertion all elements:" + h);
+
+        // Test deleteMin
+        while (!h.isEmpty()) {
+            System.out.println("Delete Min element:" + h.deleteMin());
+            System.out.println("After delete min element:"+ h + ", size "+ h.size());
+        }
     }
 
 }

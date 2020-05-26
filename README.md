@@ -24,13 +24,20 @@ Algorithm Question Study using Java, Python and SQL
 ## Data Structure
 
 ### 1. Array
+- ArrayList
+- LinkedList
 
 ### 2. Stack & Queue
 
-### 3. Hash Table
+### 3. Tree
+- Tranverse binary tree (Preorder, Inorder, Postorder) (+)
+- Tranverse binary tree non-recursive version (+)
+- Binary Search Tree (BST) 
 
-### 4. Heap - Priority Queue
-- BinaryHeap Int
+### 4. Hash Table
+
+### 5. Heap - Priority Queue
+- BinaryHeap Int (+)
 - BinaryHeap GenericType (+)
 - Binomial Heap
  

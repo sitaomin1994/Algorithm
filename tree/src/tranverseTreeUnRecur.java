@@ -1,5 +1,7 @@
 import java.awt.desktop.SystemHotkey;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -92,6 +94,27 @@ public class tranverseTreeUnRecur {
         }
     }
 
+    // level order tranverse - BFS using Queue to track the nodes
+    // Queue FIFO so it maintains the order - node -> left child - right child -> descendants
+    private static void levelOrderTranverse(TreeNode root){
+
+        if(root != null){
+
+            //Queue to track order - FIFO
+            Queue<TreeNode> q = new LinkedList<TreeNode>();
+            q.add(root);
+
+            while(!q.isEmpty()){
+                TreeNode node = q.remove();
+                System.out.print(node.val +" ");
+
+                if(node.left != null) q.add(node.left);
+                if(node.right != null) q.add(node.right);
+            }
+        }
+
+    }
+
 
     public static void main(String[] args) {
 
@@ -127,8 +150,11 @@ public class tranverseTreeUnRecur {
         System.out.print("in-order tranverse: ");
         inOrderUnRecur(head);
         System.out.println();
-        System.out.print("pos-order tranverse: ");
+        System.out.print("post-order tranverse: ");
         postOrderUnRecur(head);
+        System.out.println();
+        System.out.print("level-order tranverse: ");
+        levelOrderTranverse(head);
         System.out.println();
 
     }

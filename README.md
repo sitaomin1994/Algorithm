@@ -30,7 +30,7 @@ Algorithm Question Study using Java, Python and SQL
 ### 2. Stack & Queue
 
 ### 3. Tree
-- Tranverse binary tree (Preorder, Inorder, Postorder) (+)
+- Tranverse binary tree (Pre-order, In-order, Post-order,level-order) (+)
 - Tranverse binary tree non-recursive version (+)
 - Binary Search Tree (BST) 
 

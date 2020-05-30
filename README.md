@@ -32,7 +32,11 @@ Algorithm Question Study using Java, Python and SQL
 ### 3. Tree
 - Tranverse binary tree (Pre-order, In-order, Post-order,level-order) (+)
 - Tranverse binary tree non-recursive version (+)
-- Binary Search Tree (BST) 
+- Binary Search Tree (BST) (+)
+    - insert, remove, contains, findMin, findMax, height
+- AVL tree
+- B+ tree
+- Red-Black tree
 
 ### 4. Hash Table
 

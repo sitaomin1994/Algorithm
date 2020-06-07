@@ -44,5 +44,8 @@ Algorithm Question Study using Java, Python and SQL
 - BinaryHeap Int (+)
 - BinaryHeap GenericType (+)
 - Binomial Heap
+
+### 6. Disjoint Set (Union Find) 
+- Disjoint Set (+)
  
 

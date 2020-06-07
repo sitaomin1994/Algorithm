@@ -100,7 +100,6 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
         if(t == null){
             return t;
         }
-
         // recursively to find element ot be deleted
         int compareResult = x.compareTo(t.element);
         if(compareResult < 0){

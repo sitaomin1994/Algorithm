@@ -47,5 +47,17 @@ Algorithm Question Study using Java, Python and SQL
 
 ### 6. Disjoint Set (Union Find) 
 - Disjoint Set (+)
+
+### 7. Graph
+- Graph Rrepresentation
+    - Adjacency List (undirected, directed) (+)
+    - Adjacency Matrix (-)
+- Graph Traverse
+    - BFS
+    - DFS
+- Topology Sort for DAG
+- Minimum Cost Spanning Tree
+    - Prim's Algorithm
+    - Kruskal Algorithm
  
 

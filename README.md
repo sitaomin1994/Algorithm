@@ -51,7 +51,7 @@ Algorithm Question Study using Java, Python and SQL
 ### 7. Graph
 - Graph Rrepresentation
     - Adjacency List (undirected, directed) (+)
-    - Adjacency Matrix (-)
+    - Adjacency Matrix (+)
 - Graph Traverse
     - BFS
     - DFS

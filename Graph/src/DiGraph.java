@@ -10,11 +10,13 @@ public class DiGraph {
      *  adj is adjacent list of graph: node -> (dest node, weight)
      */
     private HashMap<String, HashMap<String, Integer>> adj;
+    private HashMap<String, HashMap<String, Integer>> reverse_adj;
     int numberOfNodes;
     int numberOfEdges;
 
     public DiGraph(){
         this.adj = new HashMap<>();
+        this.reverse_adj = new HashMap<>();
         this.numberOfEdges = 0;
         this.numberOfNodes = 0;
     }
@@ -28,6 +30,10 @@ public class DiGraph {
             adj.put(vertex, new HashMap<>());
             this.numberOfNodes++;
         }
+
+        if(!reverse_adj.containsKey(vertex)){
+            reverse_adj.put(vertex, new HashMap<>());
+        }
     }
 
     /**
@@ -37,6 +43,7 @@ public class DiGraph {
      * @param weight weight of edge
      */
     public void addEdge(String src, String dst, int weight){
+        //update adjacent list
         if(!adj.containsKey(src)) addVertex(src);
         if(!adj.containsKey(dst)) addVertex(dst);
 
@@ -44,6 +51,13 @@ public class DiGraph {
         srcNeighbors.put(dst, weight);
 
         this.numberOfEdges++;
+
+        //update reverse adjacent list
+        if(!reverse_adj.containsKey(src)) addVertex(src);
+        if(!reverse_adj.containsKey(dst)) addVertex(dst);
+
+        HashMap<String, Integer> dstNeighbors = reverse_adj.get(dst);
+        dstNeighbors.put(src, weight);
     }
 
     /**
@@ -59,6 +73,13 @@ public class DiGraph {
         srcNeighbors.put(dst, 1);
 
         this.numberOfEdges++;
+
+        //update reverse adjacent list
+        if(!reverse_adj.containsKey(src)) addVertex(src);
+        if(!reverse_adj.containsKey(dst)) addVertex(dst);
+
+        HashMap<String, Integer> dstNeighbors = reverse_adj.get(dst);
+        dstNeighbors.put(src, 1);
     }
 
     /**
@@ -82,10 +103,21 @@ public class DiGraph {
      * @param node node
      * @return hashmap of nodes and weight connected with a node
      */
-    public HashMap<String, Integer> getEdges(String node){
+    public HashMap<String, Integer> getSrcEdges(String node){
         if(!adj.containsKey(node))
             throw new RuntimeException("NO SUCH NODES IN THE GRAPH!");
         return adj.get(node);
+    }
+
+    /**
+     * get edges connected to a node
+     * @param node node
+     * @return hashmap of nodes and weight connected with a node
+     */
+    public HashMap<String, Integer> getDstEdges(String node){
+        if(!reverse_adj.containsKey(node))
+            throw new RuntimeException("NO SUCH NODES IN THE GRAPH!");
+        return reverse_adj.get(node);
     }
 
     /**
@@ -120,6 +152,7 @@ public class DiGraph {
 
         if(hasEdge(src, dst)) {
             adj.get(src).remove(dst);
+            reverse_adj.get(dst).remove(src);
             this.numberOfEdges--;
         }else{
             System.out.println("cannot find edge:" + src +" - " + dst);
@@ -132,10 +165,20 @@ public class DiGraph {
      */
     public void deleteVertex(String node){
         if(hasVertex(node)){
+            //delete all edges => node -> dst
             for(String dst: adj.get(node).keySet()){
-                deleteEdge(node, dst);
+                reverse_adj.get(dst).remove(node);
+                this.numberOfEdges--;
             }
             adj.remove(node);
+
+            //delete all edges => src -> node
+            for(String src: reverse_adj.get(node).keySet()){
+                adj.get(src).remove(node);
+                this.numberOfEdges--;
+            }
+
+            reverse_adj.remove(node);
             this.numberOfNodes--;
         }else{
             System.out.println("cannot find node: " + node);
@@ -175,11 +218,13 @@ public class DiGraph {
         System.out.println("======================Constructing graph======================= ");
         graph.addEdge("A", "B", 1);
         graph.addEdge("A", "C", 1);
-        graph.addEdge("C", "D",1);
-        graph.addEdge("D", "E",1);
-        graph.addEdge("D", "G",1);
-        graph.addEdge("E", "G",1);
-        graph.addVertex("H");
+        graph.addEdge("B", "D", 1);
+        graph.addEdge("B", "E", 1);
+        graph.addEdge("C", "D", 1);
+        graph.addEdge("C", "G", 1);
+        graph.addEdge("D", "E", 1);
+        graph.addEdge("D", "G", 1);
+        graph.addEdge("E", "G", 1);
 
         System.out.println(graph);
         System.out.println("Vertices: " + graph.numberOfNodes);
@@ -187,8 +232,9 @@ public class DiGraph {
 
         System.out.println("=======================Test delete======================== ");
         graph.deleteEdge("A","B");
+        graph.addEdge("A", "B", 1);
         graph.deleteEdge("A", "D");
-        graph.deleteVertex("H");
+        graph.deleteVertex("D");
 
         System.out.println(graph);
 

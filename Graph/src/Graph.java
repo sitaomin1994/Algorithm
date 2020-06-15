@@ -96,6 +96,10 @@ public class Graph {
         return adj.get(node);
     }
 
+    public HashMap<String, HashMap<String, Integer>> getAdj(){
+        return adj;
+    }
+
     /**
      * check if graph contains an edges
      * @param src src node

@@ -53,9 +53,9 @@ Algorithm Question Study using Java, Python and SQL
     - Adjacency List (undirected, directed) (+)
     - Adjacency Matrix (+)
 - Graph Traverse
-    - BFS
-    - DFS
-- Topology Sort for DAG
+    - BFS (+)
+    - DFS (+)
+- Topology Sort for DAG (+)
 - Minimum Cost Spanning Tree
     - Prim's Algorithm
     - Kruskal Algorithm

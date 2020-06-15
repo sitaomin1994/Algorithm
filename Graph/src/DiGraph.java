@@ -98,6 +98,14 @@ public class DiGraph {
         return this.numberOfEdges;
     }
 
+    public HashMap<String, HashMap<String, Integer>> getAdj(){
+        return this.adj;
+    }
+
+    public HashMap<String, HashMap<String, Integer>> getReverse_adj(){
+        return this.reverse_adj;
+    }
+
     /**
      * get edges connected to a node
      * @param node node

@@ -146,7 +146,8 @@ public class Graph {
     public void deleteVertex(String node){
         if(hasVertex(node)){
             for(String dst: adj.get(node).keySet()){
-                deleteEdge(node, dst);
+                adj.get(dst).remove(node);
+                this.numberOfEdges--;
             }
             adj.remove(node);
             this.numberOfNodes--;
